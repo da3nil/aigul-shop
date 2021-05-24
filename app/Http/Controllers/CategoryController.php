@@ -6,22 +6,16 @@ use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $categories = Category::all();
-
-        $products = Product::with('category')->latest()->take(4)->get();
-
-        $data = compact('categories', 'products');
-
-        return view('shop.products.index', $data);
+        //
     }
 
     /**
@@ -53,7 +47,13 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $categories = Category::all();
+
+        $products = Product::with('category')->latest()->take(4)->get();
+
+        $data = compact('categories', 'products');
+
+        return view('shop.products.index', $data);
     }
 
     /**

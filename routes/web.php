@@ -25,6 +25,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::resource('products', 'ProductController')->names('products');
+Route::resource('categories', 'CategoryController')->names('categories');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('table-list', function () {
