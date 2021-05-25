@@ -6,6 +6,8 @@
             <div class="row d-flex justify-content-center"> 
                 <div class="col-md-8">
                 <form action="{{route('admin.products.update', ['product' => $product->id])}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
                     <div class="input-group mb-3 d-flex ">
                         <span class="input-group-text" id="inputGroup-sizing-default">Название товара</span>
                         <input name="name" type="text" class="form-control" aria-label="Sizing example input " aria-describedby="inputGroup-sizing-default" value={{$product->name}}>
