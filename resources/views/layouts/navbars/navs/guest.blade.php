@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-transparent text-white" style="background: #9c27b0 !important; padding-top: 10px !important;">
+<nav class="navbar navbar-expand-lg navbar-transparent text-white" style="background: #9c27b0 !important; padding-top: 10px !important; margin-bottom: 0px; !important">
     <div class="container">
         <div class="navbar-wrapper">
             <a class="navbar-brand" href="{{ route('home') }}">Электроника Уфа</a>
