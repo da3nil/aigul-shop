@@ -42,7 +42,7 @@
                     <a href="{{ route('admin.products.show', ['product' => $product->id]) }}">{{ $product->name }}</a> 
                     </td>
                     <td>
-                    <a href="{{ route('admin.categories.index')}}">{{ $product->category_id }}</a> 
+                    <a href="{{ route('admin.categories.index')}}">{{ $product->category->name }}</a> 
                     </td>
                     <td>
                     {{ $product->price }}
