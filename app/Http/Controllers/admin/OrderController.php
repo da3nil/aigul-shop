@@ -79,10 +79,19 @@ class OrderController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        //
+        $order = Order::findOrFail($id);
+
+        $result = $order->delete();
+
+        if (!$result) {
+            return back()
+                ->withErrors(['msg' => 'Ошибка удаления заказа']);
+        }
+
+        return back()->with(['success' => 'Заказ успешно удален']);
     }
 }
