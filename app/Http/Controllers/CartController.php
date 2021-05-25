@@ -41,4 +41,38 @@ class CartController extends Controller
             ->with(['success' => 'Корзина очищена']);
     }
 
+    public function checkout(CartCheckoutRequest $request)
+    {
+        $data = $request->all();
+
+        $identifier = Str::random(30);
+
+        $order = Order::make($data);
+
+        $order->identifier = $identifier;
+
+        $order->save();
+
+        $sum = 0;
+
+        foreach (Cart::content() as $item) {
+            for ($i = 0; $i < $item->qty; $i++){
+                OrderPosition::make(['order_id' => $order->id, 'tire_id' => $item->model->id])->save();
+                $sum += $item->model->price;
+            }
+        }
+
+        $order->total = $sum;
+
+        $order->save();
+
+        Cart::store($identifier);
+
+        Cart::destroy();
+
+        return back()
+            ->with(['success' => 'Ваш заказ принят']);
+    }
+
+
 }

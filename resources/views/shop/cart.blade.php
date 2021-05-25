@@ -53,9 +53,44 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade w-100" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position: fixed">
+        <div class="modal-dialog">
+            <div class="modal-content w-100 p-0">
+                <div class="modal-header w-100">
+                    <h5 class="modal-title" id="exampleModalLabel">Оформить заказ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{ route('cart.checkout') }}" method="POST">
+                    @csrf
+                    <div class="modal-body w-100">
+                        <div class="form-group w-100 p-0 mb-3">
+                            <label for="or1">Имя</label>
+                            <input name="name" id="or1" type="text" class="form-control m-0 w-100" style="color: #000000" value="">
+                        </div>
+                        <div class="form-group w-100 p-0 mb-3">
+                            <label for="or2">Email</label>
+                            <input name="email" id="or2" type="email" class="form-control m-0 w-100" style="color: #000000" value="">
+                        </div>
+                        <div class="form-group w-100 p-0 mb-3">
+                            <label for="or3">Адрес</label>
+                            <input name="address" id="or3" type="text" class="form-control m-0 w-100" style="color: #000000">
+                        </div>
+                        <div class="form-group w-100 p-0 mb-3">
+                            <label for="or4">Телефон</label>
+                            <input name="phone" id="or4" type="tel" class="form-control m-0 w-100" style="color: #000000">
+                        </div>
+                    </div>
+                    <div class="modal-footer w-100">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        <button type="submit" class="btn btn-primary">Оформить заказ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-
-
 @endsection
 
 @push('js')
