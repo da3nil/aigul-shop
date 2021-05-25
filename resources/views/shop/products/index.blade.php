@@ -46,54 +46,24 @@
 
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4 pl-2 pr-2 mb-2">
-                            <div class="card card-chart my-card">
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid mb-2" src="{{ asset('images/kolonka.jpg') }}" alt="" style="height: 160px">
+                        @foreach($actual as $product)
+                            <div class="col-md-4 pl-2 pr-2 mb-2">
+                                <a href="{{ route('products.show', ['product' => $product->product->id]) }}" class="card card-chart my-card">
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <img class="img-fluid mb-2" src="{{ asset($product->product->img) }}" alt="" style="height: 160px">
+                                        </div>
+                                        <h4 class="card-title">{{ $product->product->name }}</h4>
+                                        <p class="card-category">{{ $product->product->category->name }}</p>
                                     </div>
-                                    <h4 class="card-title">Название</h4>
-                                    <p class="card-category">Категория</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <h3 class="card-title">4 899 ₽</h3>
+                                    <div class="card-footer">
+                                        <div class="stats">
+                                            <h3 class="card-title">{{ $product->product->price }} ₽</h3>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
-                        </div>
-                        <div class="col-md-4 pl-2 pr-2 mb-2">
-                            <div class="card card-chart my-card">
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid mb-2" src="{{ asset('images/kolonka.jpg') }}" alt="" style="height: 160px">
-                                    </div>
-                                    <h4 class="card-title">Название</h4>
-                                    <p class="card-category">Категория</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <h3 class="card-title">4 899 ₽</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 pl-2 pr-2 mb-2">
-                            <div class="card card-chart my-card">
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid mb-2" src="{{ asset('images/kolonka.jpg') }}" alt="" style="height: 160px">
-                                    </div>
-                                    <h4 class="card-title">Название</h4>
-                                    <p class="card-category">Категория</p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <h3 class="card-title">4 899 ₽</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
