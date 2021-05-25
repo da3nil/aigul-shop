@@ -14,18 +14,23 @@
         <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav ">
                 <li class="nav-item">
-                    <a href="{{ route('home') }}" class="nav-link">
+                    <a href="{{ route('products.index') }}" class="nav-link">
                         <i class="material-icons">home</i> {{ __('Главная') }}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('home') }}" class="nav-link">
+                    <a href="{{ route('about') }}" class="nav-link">
                         <i class="material-icons">info</i> {{ __('О компании') }}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('home') }}" class="nav-link">
+                    <a href="{{ route('contacts') }}" class="nav-link">
                         <i class="material-icons">contacts</i> {{ __('Контакты') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('cart.index') }}" class="nav-link">
+                        <i class="material-icons">shopping_cart</i> {{ __('Корзина') }}
                     </a>
                 </li>
 {{--                <li class="nav-item{{ $activePage == 'register' ? ' active' : '' }}">--}}

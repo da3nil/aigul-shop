@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h3>Контакты</h3>
-    </div>
+       </div>
 @endsection
 
 @push('js')
