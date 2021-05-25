@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CartCheckoutRequest;
+use App\Order;
+use App\OrderPosition;
 use App\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CartController extends Controller
 {
@@ -57,7 +61,7 @@ class CartController extends Controller
 
         foreach (Cart::content() as $item) {
             for ($i = 0; $i < $item->qty; $i++){
-                OrderPosition::make(['order_id' => $order->id, 'tire_id' => $item->model->id])->save();
+                OrderPosition::make(['order_id' => $order->id, 'product_id' => $item->model->id])->save();
                 $sum += $item->model->price;
             }
         }
@@ -73,6 +77,4 @@ class CartController extends Controller
         return back()
             ->with(['success' => 'Ваш заказ принят']);
     }
-
-
 }
