@@ -14,18 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('products.index');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::resource('products', 'ProductController')->names('products');
 Route::resource('categories', 'CategoryController')->names('categories');
+
+Route::get('about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('contacts', function () {
+    return view('contacts');
+})->name('contacts');
 
 Route::get('/cart/{id}/add', 'CartController@add')->name('cart.add');
 Route::delete('/cart/{rowId}/del', 'CartController@del')->name('cart.del');
