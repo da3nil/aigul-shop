@@ -1,7 +1,7 @@
 @extends('layouts.user', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
 
 @section('content')
-    <div class="container">
+    <div class="container" style="margin-top:20px;">
 
         <div class="row">
             <div class="col-xl-3 position-relative">
