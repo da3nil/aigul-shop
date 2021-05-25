@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -10,11 +11,13 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        //
+        $orders = Order::with('orderPositions')->paginate(20);
+
+        return view('admin.orders.index', compact('orders'));
     }
 
     /**
