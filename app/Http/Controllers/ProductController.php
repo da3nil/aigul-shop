@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ActualProduct;
 use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
@@ -19,7 +20,9 @@ class ProductController extends Controller
 
         $products = Product::with('category')->orderByDesc('id')->take(4)->get();
 
-        $data = compact('categories', 'products');
+        $actual = ActualProduct::with('product')->get();
+
+        $data = compact('categories', 'products', 'actual');
 
         return view('shop.products.index', $data);
     }

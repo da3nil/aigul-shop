@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
@@ -31,7 +32,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.products.edit');
+        $categories = Category::all();
+
+        $data = compact('categories');
+
+        return view('admin.products.create', $data);
     }
 
     /**
@@ -46,7 +51,16 @@ class ProductController extends Controller
 
         $model = Product::create($data);
 
-        if (!$model->exists()) {
+        if ($request->hasFile('img')) {
+            $image = $request->file('img');
+
+            $path = $image->store('img', 'public');
+
+            $model->img = 'storage/' . $path;
+        }
+
+
+        if (!$model->save()) {
             return back()->withErrors(['msg' => 'Ошибка создания товара']);
         }
 
@@ -78,7 +92,9 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
-        $data = compact('product');
+        $categories = Category::all();
+
+        $data = compact('product', 'categories');
 
         return view('admin.products.edit', $data);
     }
@@ -92,11 +108,22 @@ class ProductController extends Controller
      */
     public function update(ProductUpdateRequest $request, int $id): \Illuminate\Http\RedirectResponse
     {
-        $product = Product::findOrFail($id);
+        $model = Product::findOrFail($id);
 
         $data = $request->all();
 
-        if (!$product->update($data)) {
+        $model->fill($data);
+
+        if ($request->hasFile('img')) {
+            $image = $request->file('img');
+
+            $path = $image->store('img', 'public');
+
+            $model->img = 'storage/' . $path;
+        }
+
+
+        if (!$model->save()) {
             return back()->withErrors(['msg' => 'Ошибка обновления товара']);
         }
 
