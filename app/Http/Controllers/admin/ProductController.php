@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
@@ -31,7 +32,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.products.edit');
+        $categories = Category::all();
+
+        $data = compact('categories');
+
+        return view('admin.products.create', $data);
     }
 
     /**
@@ -87,7 +92,9 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
-        $data = compact('product');
+        $categories = Category::all();
+
+        $data = compact('product', 'categories');
 
         return view('admin.products.edit', $data);
     }
