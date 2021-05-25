@@ -1,4 +1,4 @@
-<div class="p-3 mb-3 bg-white rounded border" style="position: sticky; top: 0">
+<div class="p-3 mb-3 bg-white rounded border" style="">
     <div class="mb-3">
         <div class="input-group">
             <div class="input-group-prepend">
@@ -32,7 +32,7 @@
 
     <div class="text-center">
         <form action="">
-            <button class="btn btn-success" type="submit">Применить фильтр</button>
+            <button class="btn btn-rose" type="submit">Применить фильтр</button>
         </form>
     </div>
 </div>

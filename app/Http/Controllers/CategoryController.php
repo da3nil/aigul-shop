@@ -49,11 +49,15 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        $products = Product::with('category')->latest()->take(4)->get();
+        $category = Category::with('products')->findOrFail($id);
 
-        $data = compact('categories', 'products');
+        $products = Product::with('category')->where('category_id', $category->id)->paginate(12);
 
-        return view('shop.products.index', $data);
+        $new = Product::with('category')->latest()->take(4)->get();
+
+        $data = compact('categories', 'new', 'category', 'products');
+
+        return view('shop.categories.show', $data);
     }
 
     /**

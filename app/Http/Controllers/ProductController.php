@@ -53,7 +53,15 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        //$categories = Category::all();
+
+        $new = Product::with('category')->latest()->take(4)->get();
+
+        $product = Product::with('category')->findOrFail($id);
+
+        $data = compact( 'product', 'new');
+
+        return view('shop.products.show', $data);
     }
 
     /**
