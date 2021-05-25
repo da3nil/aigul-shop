@@ -14,18 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('products.index');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::resource('products', 'ProductController')->names('products');
 Route::resource('categories', 'CategoryController')->names('categories');
+
+Route::get('about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('contacts', function () {
+    return view('contacts');
+})->name('contacts');
 
 Route::get('/cart/{id}/add', 'CartController@add')->name('cart.add');
 Route::delete('/cart/{rowId}/del', 'CartController@del')->name('cart.del');
@@ -34,6 +39,9 @@ Route::get('/cart/clear', 'CartController@clear')->name('cart.clear');
 Route::post('/cart/checkout', 'CartController@checkout')->name('cart.checkout');
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::resource('admin/products', 'admin\ProductController')->names('admin.products');
+    Route::resource('admin/categories', 'admin\CategoryController')->names('admin.categories');
+
 	Route::get('table-list', function () {
 		return view('pages.table_list');
 	})->name('table');
