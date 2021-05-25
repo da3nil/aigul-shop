@@ -17,7 +17,7 @@ class ProductController extends Controller
     {
         $categories = Category::all();
 
-        $products = Product::with('category')->latest()->take(4)->get();
+        $products = Product::with('category')->orderByDesc('id')->take(4)->get();
 
         $data = compact('categories', 'products');
 

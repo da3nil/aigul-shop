@@ -27,7 +27,7 @@
                                     <button class="btn btn-primary"><i class="material-icons">favorite_border</i>
                                     </button>
                                 </div>
-                                <button class="btn btn-rose">Купить</button>
+                                <a href="{{ route('cart.add', ['id' => $product->id]) }}" class="btn btn-rose">Купить</a>
                             </div>
                         </div>
                     </div>
