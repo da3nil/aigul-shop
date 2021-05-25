@@ -1,5 +1,5 @@
 @extends('layouts.app', ['activePage' => 'table', 'titlePage' => __('Table List')])
-
+@dd($products)
 @section('content')
 <div class="content">
   <div class="container-fluid">
@@ -7,8 +7,9 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title ">Список товаров</h4>
-                  </div>
+            <h4 class="card-title ">Simple Table</h4>
+            <p class="card-category"> Here is a subtitle for this table</p>
+          </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
@@ -17,43 +18,41 @@
                     ID
                   </th>
                   <th>
-                  Картинка
+                    Name
                   </th>
                   <th>
-                    Имя
+                    Country
                   </th>
                   <th>
-                    Категория
+                    City
                   </th>
                   <th>
-                    Цена
+                    Salary
                   </th>
                 </thead>
                 <tbody>
-                   @foreach ($products as $product)
+                    <!-- @foreach ($products as $product)
+                     <td class="text-primary">
+                      
+                    </td>
+                  </tr>
                   <tr>
                     <td>
-                      {{ $product->id }}
+                      2
                     </td>
                     <td>
-                    <img src="{{asset( $product->img)}}" alt="" style="wight: 70px; height: 70px;">
+                      Minerva Hooper
                     </td>
                     <td>
-                    <a href="{{ route('admin.products.show', ['product' => $product->id]) }}">{{ $product->name }}</a> 
+                      Curaçao
                     </td>
                     <td>
-                    <a href="{{ route('admin.categories.index')}}">{{ $product->category_id }}</a> 
+                      Sinaai-Waas
                     </td>
-                    <td>
-                    {{ $product->price }}
-                    </td>
-                    @endforeach 
+                    @endforeach -->
                  
                 </tbody>
               </table>
-              <div class="d-flex justify-content-center">
-              {{$products->links()}}
-              </div>
             </div>
           </div>
         </div>

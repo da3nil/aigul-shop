@@ -20,7 +20,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view('admin.products.index', compact('categories'));
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
