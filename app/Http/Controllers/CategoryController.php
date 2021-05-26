@@ -53,7 +53,7 @@ class CategoryController extends Controller
 
         $products = Product::with('category')->where('category_id', $category->id)->paginate(12);
 
-        $new = Product::with('category')->latest()->take(4)->get();
+        $new = Product::with('category')->orderByDesc('id')->take(4)->get();;
 
         $data = compact('categories', 'new', 'category', 'products');
 
