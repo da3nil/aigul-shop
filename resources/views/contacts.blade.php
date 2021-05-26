@@ -3,7 +3,11 @@
 @section('content')
     <div class="container">
         <h3>Контакты</h3>
-       </div>
+        <p>Телефон: +7 (987) 111-14-13</p>
+        <p>Почта: <a href="mailto: mihailmaximov@gmail.com">aigul@gmail.com</a></p>
+        <p>Скайп: aigul</p>
+        <p>Телеграм: @aigul</p>
+    </div>
 @endsection
 
 @push('js')
