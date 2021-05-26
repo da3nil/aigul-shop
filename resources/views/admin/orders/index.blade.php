@@ -1,13 +1,12 @@
-@extends('layouts.app', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
+@extends('layouts.app', ['activePage' => '', 'titlePage' => __('Dashboard')])
 @section('content')
     <div class="content">
         <div class="container">
         <div class="card">
                 <div class="card-header card-header-primary justify-content-between d-flex">  Список заказов</div>
           
-  
-            <table class="table mt-5">
-  <thead class="text-primary">
+  <div class="table-responsive">            <table class="table mt-5">
+   <thead class="text-primary">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Имя</th>
@@ -39,7 +38,8 @@
     </tr>
    @endforeach
   </tbody>
-</table>
+</table></div>
+
         </div>
     </div>
 @endsection
