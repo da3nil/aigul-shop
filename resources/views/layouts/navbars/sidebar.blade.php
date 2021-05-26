@@ -48,6 +48,12 @@
             <p>{{ __('Список заявок') }}</p>
         </a>
       </li>
+      <li class="nav-item{{ $activePage == 'category' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.categories.index') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('Список категорий') }}</p>
+        </a>
+      </li>
       <li class="nav-item{{ $activePage == 'application' ? ' active' : '' }}">
       <a href="{{route('products.index')}}"><button type="button" class="btn btn-primary">Вернуться в магазин</button></a>
       </li>
