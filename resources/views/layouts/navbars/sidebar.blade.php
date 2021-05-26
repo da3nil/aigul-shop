@@ -49,7 +49,7 @@
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'application' ? ' active' : '' }}">
-      <a href="{{route('shop.products.index')}}"><button type="button" class="btn btn-primary">Вернуться в магазин</button></a>
+      <a href="{{route('products.index')}}"><button type="button" class="btn btn-primary">Вернуться в магазин</button></a>
       </li>
 
         </ul>
