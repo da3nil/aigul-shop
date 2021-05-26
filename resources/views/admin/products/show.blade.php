@@ -2,8 +2,7 @@
 
 @section('content')
     <div class="content">
-
-        <div class="container bg-white rounded">
+        <div class="container bg-white rounded pt-3 pb-3">
             <div class="row">
                 <div class="col-md-4">
                     <div class="h-100 d-flex align-items-center justify-content-center">
