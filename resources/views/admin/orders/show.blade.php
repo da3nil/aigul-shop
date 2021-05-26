@@ -20,7 +20,7 @@
 		</div>
 		<hr>
 			<div>
-				<table class="table">
+			<table class="table">
 					<thead>
 						<tr>
 							<th scope="col" class="border-top-0">Картинка</th>
@@ -29,89 +29,27 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+                @foreach($order->orderPositions as $model)
+
+                    	<tr>
 							<td style="text-align: center; max-width: 110px; width: 140px;">
-								<img src="http://tires-shop.local/images/tire1.jpg" alt="" class="img-fluid">
+                            <img src="{{asset( $model->product->img)}}" alt=""
+                                                     style="wight: 70px; height: 70px;">
 								</td>
 								<td>
 									<div class="h6">
-										<b>Название:</b> UltraGrip Ice Arctic
+										<b>Название:</b> {{$model->product->name}}
 									</div>
-									<div class="h6">
-										<b>Марка:</b> Brasa
-									</div>
-									<div class="h6">
-										<b>Ширина:</b> 225
-									</div>
-									<div class="h6">
-										<b>Профиль:</b> 85
-									</div>
-									<div class="h6">
-										<b>Диаметр:</b> R13C
-									</div>
-									<div class="h6">
-										<b>Сезон:</b> Лето
-									</div>
+
 								</td>
-								<td>4958 руб.</td>
-							</tr>
-							<tr>
-								<td style="text-align: center; max-width: 110px; width: 140px;">
-									<img src="http://tires-shop.local/images/tire1.jpg" alt="" class="img-fluid">
-									</td>
-									<td>
-										<div class="h6">
-											<b>Название:</b> UltraGrip Ice Arctic
-										</div>
-										<div class="h6">
-											<b>Марка:</b> Cooper
-										</div>
-										<div class="h6">
-											<b>Ширина:</b> 225
-										</div>
-										<div class="h6">
-											<b>Профиль:</b> 9.5
-										</div>
-										<div class="h6">
-											<b>Диаметр:</b> R22C
-										</div>
-										<div class="h6">
-											<b>Сезон:</b> Лето
-										</div>
-									</td>
-									<td>4301 руб.</td>
-								</tr>
-								<tr>
-									<td style="text-align: center; max-width: 110px; width: 140px;">
-										<img src="http://tires-shop.local/images/tire2.jpg" alt="" class="img-fluid">
-										</td>
-										<td>
-											<div class="h6">
-												<b>Название:</b> Ecopia EP150
-											</div>
-											<div class="h6">
-												<b>Марка:</b> Achilles
-											</div>
-											<div class="h6">
-												<b>Ширина:</b> 255
-											</div>
-											<div class="h6">
-												<b>Профиль:</b> 45
-											</div>
-											<div class="h6">
-												<b>Диаметр:</b> R12C
-											</div>
-											<div class="h6">
-												<b>Сезон:</b> Лето
-											</div>
-										</td>
-										<td>4228 руб.</td>
-									</tr>
+							<td>{{$model->product->price}} руб.</td>
+						</tr>
+                      @endforeach
 									<tr>
 										<th scope="col"></th>
 										<th scope="col"></th>
 										<th scope="col">Итого 
-											<br> 13487 руб.
+											<br> {{$order->total}} руб.
 											</th>
 											<th scope="col" style="max-width: 10%; width: 10%;"></th>
 										</tr>
