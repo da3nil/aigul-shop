@@ -11,7 +11,7 @@
                 <i class="material-icons">content_copy</i>
               </div>
               <p class="card-category">Заказов</p>
-              <h3 class="card-title">4950
+              <h3 class="card-title">{{ $orders_count }}
                 </h3>
             </div>
             <div class="card-footer">
@@ -25,7 +25,7 @@
                 <i class="material-icons">store</i>
               </div>
               <p class="card-category">Категорий</p>
-              <h3 class="card-title">10</h3>
+              <h3 class="card-title">{{ $categories_count }}</h3>
             </div>
             <div class="card-footer">
 
@@ -39,7 +39,7 @@
                 <i class="material-icons">info_outline</i>
               </div>
               <p class="card-category">Товаров</p>
-              <h3 class="card-title">75</h3>
+              <h3 class="card-title">{{ $products_count }}</h3>
             </div>
             <div class="card-footer">
 
@@ -53,7 +53,7 @@
                 <i class="fa fa-twitter"></i>
               </div>
               <p class="card-category">Пользователей</p>
-              <h3 class="card-title">245</h3>
+              <h3 class="card-title">{{ $users_count }}</h3>
             </div>
             <div class="card-footer">
             </div>
