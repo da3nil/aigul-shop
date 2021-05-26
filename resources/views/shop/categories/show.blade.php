@@ -17,8 +17,8 @@
                 <div class="container">
                     <div class="row">
                         @foreach($products as $product)
-                            <div class="col-md-3 pl-2 pr-2 mb-2">
-                                <a href="{{ route('products.show', ['product' => $product->id]) }}" class="card card-chart my-card">
+                            <div class="col-md-4 pl-2 pr-2 mb-3">
+                                <a href="{{ route('products.show', ['product' => $product->id]) }}" class="card card-chart my-card m-0 h-100">
                                     <div class="card-body">
                                         <div class="text-center">
                                             <img class="img-fluid mb-2" src="{{ asset($product->img) }}" alt="" style="height: 160px">
@@ -46,12 +46,12 @@
         <div class="titlepb-0 mb-0">
             <h3 class="font-weight-bold">Новые поступления</h3>
         </div>
-        <div class="container">
+        <div class="container mb-5">
             <div class="row">
 
                 @foreach($new as $product)
-                    <div class="col-md-3 pl-2 pr-2 mb-2">
-                        <a href="{{ route('products.show', ['product' => $product->id]) }}" class="card card-chart my-card">
+                    <div class="col-md-3 pl-2 pr-2 mb-2 mb-md-0">
+                        <a href="{{ route('products.show', ['product' => $product->id]) }}" class="card card-chart my-card m-0 h-100">
                             <div class="card-body">
                                 <div class="text-center">
                                     <img class="img-fluid mb-2" src="{{ asset($product->img) }}" alt="" style="height: 160px">

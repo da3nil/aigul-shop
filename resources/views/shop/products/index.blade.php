@@ -3,8 +3,8 @@
 @section('content')
     <div class="container" style="margin-top:20px;">
 
-        <div class="row">
-            <div class="col-xl-3 position-relative">
+        <div class="row mb-3">
+            <div class="col-xl-3 position-relative mb-3 mb-md-0">
                 @include('layouts.navbars.mysidebar')
             </div>
             <div class="col-xl-9">
@@ -47,8 +47,8 @@
                 <div class="container">
                     <div class="row">
                         @foreach($actual as $product)
-                            <div class="col-md-4 pl-2 pr-2 mb-2">
-                                <a href="{{ route('products.show', ['product' => $product->product->id]) }}" class="card card-chart my-card">
+                            <div class="col-md-4 pl-2 pr-2 mb-2 mb-md-0">
+                                <a href="{{ route('products.show', ['product' => $product->product->id]) }}" class="card card-chart my-card m-0 h-100">
                                     <div class="card-body">
                                         <div class="text-center">
                                             <img class="img-fluid mb-2" src="{{ asset($product->product->img) }}" alt="" style="height: 160px">
@@ -72,12 +72,12 @@
         <div class="titlepb-0 mb-0">
             <h3 class="font-weight-bold">Новые поступления</h3>
         </div>
-        <div class="container">
+        <div class="container mb-5">
             <div class="row">
 
                 @foreach($products as $product)
-                    <div class="col-md-3 pl-2 pr-2 mb-2">
-                        <a href="{{ route('products.show', ['product' => $product->id]) }}" class="card card-chart my-card">
+                    <div class="col-md-3 pl-2 pr-2 mb-2 mb-md-0">
+                        <a href="{{ route('products.show', ['product' => $product->id]) }}" class="card card-chart my-card m-0 h-100">
                             <div class="card-body">
                                 <div class="text-center">
                                     <img class="img-fluid mb-2" src="{{ asset($product->img) }}" alt="" style="height: 160px">

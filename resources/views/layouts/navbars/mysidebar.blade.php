@@ -1,4 +1,4 @@
-<div class="p-3 mb-3 bg-white rounded border" style="">
+<div class="p-3  bg-white rounded border h-100" style="">
     <div class="mb-3">
         <div class="input-group">
             <div class="input-group-prepend">
