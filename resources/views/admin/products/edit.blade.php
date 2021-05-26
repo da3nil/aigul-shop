@@ -27,11 +27,9 @@
                     <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default" value={{$product->category->name}}>Категория</span>
                         <select name="category_id" class="form-control" id="exampleFormControlSelect1">  
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
+                        @foreach ($categories as $category)
+                        <option value="{{$category->id}}" @if( $category->id === $product->category_id ) selected @endif >{{$category->name}}</option>
+                        @endforeach 
                         </select>
                     </div>
                     <div class="text-center">

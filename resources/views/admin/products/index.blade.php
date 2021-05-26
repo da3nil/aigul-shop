@@ -5,9 +5,10 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title ">Список товаров</h4>
+        <div class="card ">
+          <div class="card-header card-header-primary justify-content-between d-flex">
+            <p class="card-title h4 ">Список товаров</p>
+              <a href="{{ route('admin.products.create')}}" class="btn btn-rose float-right">Создать товар</a>
                   </div>
           <div class="card-body">
             <div class="table-responsive">
