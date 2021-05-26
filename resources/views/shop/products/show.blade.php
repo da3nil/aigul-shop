@@ -32,7 +32,7 @@
         <div class="container bg-white rounded mb-3">
             <div class="row">
                 <div class="col-md-6 p-3 text-center">
-                    <img class="img-fluid" src="{{ asset($product->img) }}" alt="">
+                    <img class="img-fluid" src="{{ asset($product->img) }}" alt="" style="height:200px">
                 </div>
                 <div class="col-md-6 p-3">
                     <div class="card card-chart">
@@ -67,7 +67,7 @@
                     </div>
                 </div>
             </div>
-            <div class="description mb-1">Код товара: {{ $product->id }}</div>
+            <div class="description pb-3">Код товара: {{ $product->id }}</div>
         </div>
 
         <div class="container bg-white rounded">
@@ -93,7 +93,7 @@
                         <a href="{{ route('products.show', ['product' => $product->id]) }}" class="card card-chart my-card m-0 h-100">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <img class="img-fluid mb-2" src="{{ asset($product->img) }}" alt="" style="height: 160px">
+                                    <img class="img-fluid mb-2" src="{{ asset($product->img) }}" alt="" >
                                 </div>
                                 <h4 class="card-title">{{ $product->name }}</h4>
                                 <p class="card-category">{{ $product->category->name }}</p>
