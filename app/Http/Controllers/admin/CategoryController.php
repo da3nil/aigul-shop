@@ -52,7 +52,7 @@ class CategoryController extends Controller
         }
 
         return redirect()
-            ->route('categories.index')
+            ->route('admin.categories.index')
             ->with(['success' => 'Категория успешно создана']);
     }
 
@@ -102,7 +102,7 @@ class CategoryController extends Controller
         }
 
         return redirect()
-            ->route('categories.index')
+            ->route('admin.categories.index')
             ->with(['success' => 'Категория успешно обновлена']);
     }
 
