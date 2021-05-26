@@ -5,7 +5,7 @@
       Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo">
-    <a href="https://creative-tim.com/" class="simple-text logo-normal">
+    <a href="{{ route('home') }}" class="simple-text logo-normal">
       {{ __('панель админа') }}
     </a>
   </div>
@@ -32,7 +32,7 @@
                 <span class="sidebar-normal">{{ __('Профиль') }} </span>
               </a>
             </li>
-            
+
           </ul>
         </div>
       </li>

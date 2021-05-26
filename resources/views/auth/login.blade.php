@@ -76,11 +76,7 @@
                 </a>
             @endif
         </div>
-        <div class="col-6 text-right">
-            <a href="{{ route('register') }}" class="text-light">
-                <small>{{ __('Создать новый аккаунт') }}</small>
-            </a>
-        </div>
+
       </div>
     </div>
   </div>

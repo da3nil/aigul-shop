@@ -40,13 +40,14 @@
                             </button>
                         </div>
                         <form action="{{route('admin.categories.store')}}" method="post">
+                            @csrf
                             <div class="modal-body">
                                 <p>Введите название категории:</p>
-                                <input type="text" class="form-control" id="exampleFormControlInput1">
+                                <input type="text" class="form-control" id="exampleFormControlInput1" name="name">
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                                <button type="button" class="btn btn-primary">Создать</button>
+                                <button type="submit" class="btn btn-primary">Создать</button>
                             </div>
                         </form>
                     </div>
@@ -64,18 +65,18 @@
                             </button>
                         </div>
                         <form action="{{route('admin.categories.store')}}">
-                        <div class="modal-body">
-                            <p>Измените название категории:</p>
+                            <div class="modal-body">
+                                <p>Измените название категории:</p>
                                 @csrf
                                 @method('PUT')
                                 <input type="text" class="form-control" id="exampleFormControlInput1"
                                        placeholder="Новое название...">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger">Удалить</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                            <button type="button" class="btn btn-primary">Изменить</button>
-                        </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger">Удалить</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                                <button type="button" class="btn btn-primary">Изменить</button>
+                            </div>
                         </form>
                     </div>
                 </div>
