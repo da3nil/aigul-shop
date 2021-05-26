@@ -32,12 +32,7 @@
                 <span class="sidebar-normal">{{ __('Профиль') }} </span>
               </a>
             </li>
-            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('user.index') }}">
-                <span class="sidebar-mini"> Уп </span>
-                <span class="sidebar-normal"> {{ __('Управление пользователями') }} </span>
-              </a>
-            </li>
+            
           </ul>
         </div>
       </li>
@@ -46,6 +41,15 @@
           <i class="material-icons">content_paste</i>
             <p>{{ __('Список товаров') }}</p>
         </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'application' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.orders.index') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('Список заявок') }}</p>
+        </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'application' ? ' active' : '' }}">
+      <a href="{{route('shop.products.index')}}"><button type="button" class="btn btn-primary">Вернуться в магазин</button></a>
       </li>
 
         </ul>
