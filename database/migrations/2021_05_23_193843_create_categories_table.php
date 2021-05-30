@@ -18,7 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name')->default('Без категории');
             $table->unsignedBigInteger('parent_id')->default(null)->nullable();
             $table->timestamps();
-
+            $table->softDeletes();
             $table->foreign('parent_id')->references('id')->on('categories');
         });
     }
