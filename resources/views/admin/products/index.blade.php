@@ -60,7 +60,7 @@
                                             <td>
                                                 {{ $product->id }}
                                             </td>
-                                            <td>
+                                            <td class="text-center">
                                                 <img src="{{asset( $product->img)}}" alt=""
                                                      style="wight: 70px; height: 70px;">
                                             </td>
