@@ -58,7 +58,7 @@ class ProductController extends Controller
     {
         //$categories = Category::all();
 
-        $new = Product::with('category')->orderByDesc('id')->take(4)->get();;
+        $new = Product::with('category')->orderByDesc('id')->take(4)->get();
 
         $product = Product::with('category')->findOrFail($id);
 

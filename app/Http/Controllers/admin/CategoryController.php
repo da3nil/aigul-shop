@@ -123,7 +123,7 @@ class CategoryController extends Controller
         }
 
         return redirect()
-            ->route('categories.index')
-            ->with(['success' => 'Товар успешно удален']);
+            ->route('admin.categories.index')
+            ->with(['success' => 'Категория успешна удалена']);
     }
 }

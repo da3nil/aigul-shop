@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('img', 319)->default('images/default.png');
             $table->integer('price')->default(0);
             $table->timestamps();
-
+            $table->softDeletes();
             $table->foreign('category_id')->references('id')->on('categories');
         });
     }
