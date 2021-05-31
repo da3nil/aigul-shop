@@ -17,22 +17,15 @@
             <p>{{ __('Главная') }}</p>
         </a>
       </li>
-      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
-        <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
-          <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
-          <p>{{ __('Функции админа') }}
-            <b class="caret"></b>
-          </p>
-        </a>
+    
         <div class="collapse show" id="laravelExample">
           <ul class="nav">
             <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('profile.edit') }}">
-                <span class="sidebar-mini"> Пр </span>
+              <i class="material-icons">person</i>
                 <span class="sidebar-normal">{{ __('Профиль') }} </span>
               </a>
-            </li>
-
+            
           </ul>
         </div>
       </li>
