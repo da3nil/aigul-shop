@@ -40,6 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('admin/products', 'admin\ProductController')->names('admin.products');
     Route::resource('admin/categories', 'admin\CategoryController')->names('admin.categories');
     Route::resource('admin/orders', 'admin\OrderController')->names('admin.orders');
+    Route::resource('admin/actual', 'admin\ActualController')->names('admin.actual');
 
 	Route::get('table-list', function () {
 		return view('pages.table_list');
