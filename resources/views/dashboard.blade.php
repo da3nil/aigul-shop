@@ -61,9 +61,9 @@
                             <h3 class="card-title">{{ $products_count }}</h3>
                         </div>
                         <div class="card-footer">
-                            <ul class="list-group list-group-flush">
+                            <ul class="list-group list-group-flush w-100">
                                 @foreach ($products as $product)
-                                    <li class="list-group-item"><a href="{{ route('admin.products.show', ['product' => $product->id]) }}">{{ $product->name }}</a></li>
+                                    <li class="list-group-item " style="overflow: hidden;"><a style="white-space: nowrap; overflow: hidden; display:block;  padding-right: 5px; text-overflow: ellipsis;" href="{{ route('admin.products.show', ['product' => $product->id]) }}">{{ $product->name }}</a></li>
                                 @endforeach
                                 <li class="list-group-item">
                                     <a class="text-decoration-none" href="{{ route('admin.products.index') }}">

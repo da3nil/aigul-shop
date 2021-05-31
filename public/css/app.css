@@ -9191,12 +9191,8 @@ button.bg-dark:focus {
           user-select: none !important;
 }
 
-.overflow-auto {
-  overflow: auto !important;
-}
-
-.overflow-hidden {
-  overflow: hidden !important;
+.overflow-15 {
+  overflow: 15 !important;
 }
 
 .position-static {
