@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ActualProduct;
 use App\Category;
+use App\Filters\ProductFilter;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -14,15 +15,15 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(ProductFilter $filters)
     {
         $categories = Category::all();
 
-        $products = Product::with('category')->orderByDesc('id')->take(4)->get();
+        $new = Product::with('category')->orderByDesc('id')->take(4)->get();
 
-        $actual = ActualProduct::with('product')->get();
+        $products = Product::filter($filters)->with('category')->paginate(9)->appends(request()->query());
 
-        $data = compact('categories', 'products', 'actual');
+        $data = compact('categories', 'products', 'new');
 
         return view('shop.products.index', $data);
     }

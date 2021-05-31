@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('products.index');
-});
+Route::get('/', 'Welcome')->name('welcome');
 
 Auth::routes(['register' => false]);
 
