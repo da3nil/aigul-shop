@@ -20,7 +20,7 @@
                 <a class="btn @if(Request::route()->getName() === "products.index") btn-rose @else btn-primary @endif h-100 text-white p-2 d-flex align-items-center justify-content-start"
                    href="{{ route('products.index') }}" aria-selected="true">
                     <img class=" rounded float-left h-50 pr-2" style="width:32px; height:32px;"
-                         src="{{ asset('images/icons/phone.png') }}" alt="">
+                         src="{{ asset('images/icons/all.png') }}" alt="">
                     Все товары
                 </a>
             </li>
