@@ -17,7 +17,9 @@
                         <div class="card-footer">
                             <ul class="list-group list-group-flush">
                                 @foreach($orders as $order)
-                                    <li class="list-group-item"><a href="{{ route('admin.orders.show', ['order' => $order->id]) }}">Заказ #{{$order->id}}</a></li>
+                                    <li class="list-group-item"><a
+                                            href="{{ route('admin.orders.show', ['order' => $order->id]) }}">Заказ
+                                            #{{$order->id}}</a></li>
                                 @endforeach
                                 <li class="list-group-item">
                                     <a class="text-decoration-none" href="{{ route('admin.orders.index') }}">
@@ -40,7 +42,9 @@
                         <div class="card-footer">
                             <ul class="list-group list-group-flush">
                                 @foreach($categories as $category)
-                                    <li class="list-group-item"><a href="{{ route('categories.show', ['category' => $category->id]) }}">{{ $category->name }}</a></li>
+                                    <li class="list-group-item"><a
+                                            href="{{ route('categories.show', ['category' => $category->id]) }}">{{ $category->name }}</a>
+                                    </li>
                                 @endforeach
                                 <li class="list-group-item">
                                     <a class="text-decoration-none" href="{{ route('admin.categories.index') }}">
@@ -63,7 +67,10 @@
                         <div class="card-footer">
                             <ul class="list-group list-group-flush w-100">
                                 @foreach ($products as $product)
-                                    <li class="list-group-item " style="overflow: hidden;"><a style="white-space: nowrap; overflow: hidden; display:block;  padding-right: 5px; text-overflow: ellipsis;" href="{{ route('admin.products.show', ['product' => $product->id]) }}">{{ $product->name }}</a></li>
+                                    <li class="list-group-item " style="overflow: hidden;"><a
+                                            style="white-space: nowrap; overflow: hidden; display:block;  padding-right: 5px; text-overflow: ellipsis;"
+                                            href="{{ route('admin.products.show', ['product' => $product->id]) }}">{{ $product->name }}</a>
+                                    </li>
                                 @endforeach
                                 <li class="list-group-item">
                                     <a class="text-decoration-none" href="{{ route('admin.products.index') }}">
@@ -78,8 +85,6 @@
 
             </div>
         </div>
-    </div>
-    </div>
     </div>
 @endsection
 
