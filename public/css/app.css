@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);.tim-row {
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Oswald&display=swap);.tim-row {
   margin-bottom: 20px;
 }
 
@@ -901,7 +901,8 @@
 .flash {
   -webkit-animation-name: flash;
           animation-name: flash;
-}/*!
+}
+/*!
 
  =========================================================
  * Material Kit - v2.0.7
@@ -11878,5 +11879,16 @@ a.text-dark:focus {
 
 .my-card:hover {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.border-magenta {
+  border-color: #8b00ff;
+  /* Цвет границы */
+  border: 2px solid;
+  /* Стиль границы */
+}
+
+.oswald {
+  font-family: "Oswald", sans-serif;
 }
 

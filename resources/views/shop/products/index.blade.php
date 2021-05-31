@@ -14,7 +14,7 @@
                     <div class="row">
                         @foreach($products as $product)
                             <div class="col-md-4 pl-2 pr-2 mb-3">
-                                <a href="{{ route('products.show', ['product' => $product->id]) }}" class="border border-danger card card-chart my-card m-0 h-100">
+                                <a href="{{ route('products.show', ['product' => $product->id]) }}" class="border border-magenta card card-chart my-card m-0 h-100">
                                     <div class="card-body">
                                         <div class="text-center">
                                             <img class="img-fluid mb-2" src="{{ asset($product->img) }}" alt="" style="height: 160px">
@@ -47,7 +47,7 @@
 
                 @foreach($new as $product)
                     <div class="col-md-3 pl-2 pr-2 mb-2 mb-md-0">
-                        <a href="{{ route('products.show', ['product' => $product->id]) }}" class="card card-chart my-card m-0 h-100">
+                        <a href="{{ route('products.show', ['product' => $product->id]) }}" class="border-magenta card card-chart my-card m-0 h-100">
                             <div class="card-body">
                                 <div class="text-center">
                                     <img class="img-fluid mb-2" src="{{ asset($product->img) }}" alt="" style="height: 160px">
