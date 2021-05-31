@@ -48,7 +48,7 @@ class ActualController extends Controller
 
         $result = $model->save();
 
-        if (!$result) {
+        if ($result) {
             return redirect()
                 ->route('admin.actual.index')
                 ->with(['success' => 'Актуальный товар успешно добавлен']);
