@@ -1,15 +1,24 @@
 @extends('layouts.user', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
 
 @section('content')
+<style>
+#frog p{
+    font-size:1.3rem;
+}
+</style>
+
     <div class="container">
 <div class="row">
 <div class="col-md-6 m-auto oswald">   
-<h3 class="oswald text-center">Контакты</h3>
+<h3 class="oswald text-center" style="font-size:2rem;">Контакты</h3>
 <hr>
+<div id="frog" >
         <p>Телефон: +7 (987) 111-14-13</p>
         <p>Почта: <a href="mailto: mihailmaximov@gmail.com">aigul@gmail.com</a></p>
         <p>Скайп: aigul</p>
         <p>Телеграм: @aigul</p>
+        </div>
+        
 
 
         <script type="text/javascript" src="https://vk.com/js/api/openapi.js?169"></script>
