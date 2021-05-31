@@ -1,32 +1,35 @@
 @extends('layouts.app', ['activePage' => '', 'titlePage' => __('Table List')])
 
 @section('content')
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Добавить актуальный товар</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <div class="form-group">
-    <label for="exampleFormControlSelect1">Пример меню выбора</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-    @foreach($allProduct as $product)
-      <option value="{{$product->id}}">{{ $product->name }}</option>
-    @endforeach
-    </select>
-  </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-primary">Добавить</button>
-      </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Добавить актуальный товар</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{ route('admin.actual.store') }}" method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Товар</label>
+                            <select class="form-control" id="exampleFormControlSelect1" name="product_id">
+                                @foreach($allProduct as $product)
+                                    <option value="{{$product->id}}">{{ $product->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        <button type="submit" class="btn btn-primary">Добавить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
     <div class="content">
@@ -61,9 +64,9 @@
                     <div class="card ">
                         <div class="card-header card-header-primary justify-content-between d-flex">
                             <p class="card-title h4 ">Список актуальных товаров</p>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-Добавить товар
-</button>
+                            <button type="button" class="btn btn-rose" data-toggle="modal" data-target="#exampleModal">
+                                Добавить товар
+                            </button>
 
 
                         </div>
@@ -110,13 +113,19 @@
                                                 {{ $product->product->price }}
                                             </td>
                                             <td>
-                                                <form action="{{ route('admin.actual.destroy', ['actual' => $product->id]) }}" method="POST">
+                                                <form
+                                                    action="{{ route('admin.actual.destroy', ['actual' => $product->id]) }}"
+                                                    method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-link  p-0 m-0" href="">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
-                                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                             fill="currentColor" class="bi bi-x-circle"
+                                                             viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                                            <path
+                                                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                                                         </svg>
                                                     </button>
                                                 </form>

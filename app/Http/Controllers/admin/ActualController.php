@@ -48,14 +48,14 @@ class ActualController extends Controller
 
         $result = $model->save();
 
-        if ($result) {
-            return redirect()
-                ->route('admin.actual.index')
-                ->with(['success' => 'Актуальный товар успешно добавлен']);
+        if (!$result) {
+            return back()
+                ->withErrors(['msg' => 'Ошибка создания актуального товара']);
         }
 
-        return back()
-            ->withErrors(['msg' => 'Ошибка создания актуального товара']);
+        return redirect()
+            ->route('admin.actual.index')
+            ->with(['success' => 'Актуальный товар успешно добавлен']);
     }
 
     /**
@@ -104,7 +104,7 @@ class ActualController extends Controller
 
         $result = $model->delete();
 
-        if (!$result) {
+        if ($result) {
             return redirect()
                 ->route('admin.actual.index')
                 ->with(['success' => 'Актуальный товар успешно удален']);
