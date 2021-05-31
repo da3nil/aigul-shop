@@ -14,10 +14,9 @@
       <div class="form-group">
     <label for="exampleFormControlSelect1">Пример меню выбора</label>
     <select class="form-control" id="exampleFormControlSelect1">
-    
-
-      <option>1</option>
-
+    @foreach($allProduct as $product)
+      <option value="{{$product->id}}">{{ $product->name }}</option>
+    @endforeach
     </select>
   </div>
       </div>
