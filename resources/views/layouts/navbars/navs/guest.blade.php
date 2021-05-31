@@ -1,8 +1,9 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-transparent text-white" style="background: #9c27b0 !important; padding-top: 10px !important; margin-bottom: 0px; !important">
+<nav class="navbar navbar-expand-lg navbar-transparent text-white  " style="background: #9c27b0 !important; padding-top: 10px !important; margin-bottom: 0px; !important">
     <div class="container">
         <div class="navbar-wrapper">
-            <a class="navbar-brand font-weight-bold" href="{{ route('welcome') }}">Электроника Уфа</a>
+        <img src="{{ asset('images/icons/atom.png') }}" alt="">
+            <a class="navbar-brand font-weight-bold oswald" href="{{ route('welcome') }}">Электроника Уфа</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
                 aria-expanded="false" aria-label="Toggle navigation">
