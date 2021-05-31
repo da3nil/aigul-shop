@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Filters\ProductFilter;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -45,13 +46,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(int $id, ProductFilter $filters)
     {
         $categories = Category::all();
 
         $category = Category::with('products')->findOrFail($id);
 
-        $products = Product::with('category')->where('category_id', $category->id)->paginate(12);
+        $products = Product::filter($filters)->with('category')
+            ->where('category_id', $category->id)
+            ->paginate(9)->appends(request()->query());
 
         $new = Product::with('category')->orderByDesc('id')->take(4)->get();;
 

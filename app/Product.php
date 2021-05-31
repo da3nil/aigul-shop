@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Filters\QueryFilter;
+use Illuminate\Database\Eloquent\Builder;
 
 class Product extends Model
 {
@@ -12,6 +14,11 @@ class Product extends Model
     protected $fillable = [
       'name', 'category_id', 'content', 'price', 'img'
     ];
+
+    public function scopeFilter(Builder $builder, QueryFilter $filters)
+    {
+        return $filters->apply($builder);
+    }
 
     public function category()
     {
