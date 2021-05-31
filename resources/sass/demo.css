@@ -888,3 +888,7 @@
 .flash {
   animation-name: flash;
 }
+.border-magenta{
+  border: 1px solid !important ;
+  border-color: rgb(153, 24, 153) !important ;
+}
