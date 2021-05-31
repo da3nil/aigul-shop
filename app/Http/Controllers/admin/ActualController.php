@@ -34,11 +34,24 @@ class ActualController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $model = (new ActualProduct())->fill($data);
+
+        $result = $model->save();
+
+        if (!$result) {
+            return redirect()
+                ->route('admin.actual.index')
+                ->with(['success' => 'Актуальный товар успешно добавлен']);
+        }
+
+        return back()
+            ->withErrors(['msg' => 'Ошибка создания актуального товара']);
     }
 
     /**
@@ -79,10 +92,21 @@ class ActualController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $model = ActualProduct::findOrFail($id);
+
+        $result = $model->delete();
+
+        if (!$result) {
+            return redirect()
+                ->route('admin.actual.index')
+                ->with(['success' => 'Актуальный товар успешно удален']);
+        }
+
+        return back()
+            ->withErrors(['msg' => 'Ошибка удаления актуального товара']);
     }
 }
