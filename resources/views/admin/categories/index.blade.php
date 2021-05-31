@@ -11,7 +11,7 @@
             @foreach ($categories as $category)
                 <div class="alert alert-primary mt-3 " role="alert">
                     <div class="d-flex justify-content-between">
-                        <nav class="">{{$category->name}}</nav>
+                        <nav class=""><a href="{{ route('admin.categories.edit', ['category' => $category->id]) }}">{{$category->name}}</a></nav>
                         <nav class="">
                             <form method="POST" class="p-0 m-0" action="{{ route('admin.categories.destroy', ['category' => $category->id]) }}">
                                 @csrf

@@ -44,7 +44,7 @@
                         <div class="input-group mb-3 d-flex ">
                             <span class="input-group-text" id="inputGroup-sizing-default">Название товара</span>
                             <input name="name" type="text" class="form-control" aria-label="Sizing example input "
-                                   aria-describedby="inputGroup-sizing-default" value={{$product->name}}>
+                                   aria-describedby="inputGroup-sizing-default" value="{{$product->name}}">
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="inputGroup-sizing-default">Описание товара</span>
@@ -63,7 +63,7 @@
                                    aria-describedby="inputGroup-sizing-default">
                         </div>
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-default" value={{$product->category->name}}>Категория</span>
+                            <span class="input-group-text" id="inputGroup-sizing-default">Категория</span>
                             <select name="category_id" class="form-control" id="exampleFormControlSelect1">
                                 @foreach ($categories as $category)
                                     <option value="{{$category->id}}"
@@ -72,7 +72,7 @@
                             </select>
                         </div>
                         <div class="text-center">
-                            <button class="btn btn-primory" type="submit">Сохранить</button>
+                            <button class="btn btn-primary" type="submit">Сохранить</button>
                         </div>
                     </form>
                 </div>
