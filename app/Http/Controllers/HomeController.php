@@ -27,10 +27,22 @@ class HomeController extends Controller
     public function index()
     {
         $products_count = Product::count();
-        $users_count = User::count();
         $categories_count = Category::count();
         $orders_count = Order::count();
 
-        return view('dashboard', compact('products_count', 'users_count', 'categories_count', 'orders_count'));
+        $orders = Order::orderByDesc('id')->take(5)->get();
+        $categories = Category::orderByDesc('id')->take(5)->get();
+        $products = Product::orderByDesc('id')->take(5)->get();
+
+        $data = compact(
+            'orders',
+            'categories',
+            'products',
+            'products_count',
+            'categories_count',
+            'orders_count'
+        );
+
+        return view('dashboard', $data);
     }
 }
