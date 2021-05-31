@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\ActualProduct;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ActualProductStoreRequest;
+use App\Product;
 use Illuminate\Http\Request;
 
 class ActualController extends Controller
@@ -17,7 +19,9 @@ class ActualController extends Controller
     {
         $products = ActualProduct::with(['product'])->paginate(15);
 
-        return view('admin.actual.index', compact('products'));
+        $allProduct = Product::all();
+
+        return view('admin.actual.index', compact('products', 'allProduct'));
     }
 
     /**
@@ -33,10 +37,10 @@ class ActualController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\ActualProductStoreRequest  $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ActualProductStoreRequest $request)
     {
         $data = $request->all();
 
