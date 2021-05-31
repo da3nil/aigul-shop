@@ -45,6 +45,14 @@ class CategoryController extends Controller
 
         $model =(new Category())->fill($data);
 
+        if ($request->hasFile('img')) {
+            $image = $request->file('img');
+
+            $path = $image->store('img', 'public');
+
+            $model->img = 'storage/' . $path;
+        }
+
         $result = $model->save();
 
         if (!$result) {
@@ -95,7 +103,17 @@ class CategoryController extends Controller
 
         $model = Category::findOrFail($id);
 
-        $result = $model->update($data);
+        $model->fill($data);
+
+        if ($request->hasFile('img')) {
+            $image = $request->file('img');
+
+            $path = $image->store('img', 'public');
+
+            $model->img = 'storage/' . $path;
+        }
+
+        $result = $model->save();
 
         if (!$result) {
             return back()->withErrors(['msg' => 'Ошибка обновления категории']);

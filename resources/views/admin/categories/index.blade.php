@@ -47,14 +47,23 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <form action="{{route('admin.categories.store')}}" method="post">
+                        <form action="{{route('admin.categories.store')}}" method="post" enctype="multipart/form-data">
+                            @csrf
                             <div class="modal-body">
-                                <p>Введите название категории:</p>
-                                <input type="text" class="form-control" id="exampleFormControlInput1">
+                                <div class="input-group mb-3 d-flex ">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Название</span>
+                                    <input name="name" type="text" class="form-control" aria-label="Sizing example input "
+                                           aria-describedby="inputGroup-sizing-default" value="">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Изображение</span>
+                                    <input name="img" type="file" class="form-control" aria-label="Sizing example input"
+                                           aria-describedby="inputGroup-sizing-default">
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                                <button type="button" class="btn btn-primary">Создать</button>
+                                <button type="submit" class="btn btn-primary">Создать</button>
                             </div>
                         </form>
                     </div>
