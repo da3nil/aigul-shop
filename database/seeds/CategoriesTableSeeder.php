@@ -11,7 +11,7 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        (new \App\Category())->fill(['name' => 'Бытовая техника', 'img' => 'images/icons/all.png'])->save();
+        (new \App\Category())->fill(['name' => 'Бытовая техника', 'img' => 'images/icons/washer.png'])->save();
         (new \App\Category())->fill(['name' => 'Смартфоны и гаджеты', 'img' => 'images/icons/phone.png'])->save();
         (new \App\Category())->fill(['name' => 'Компьютеры', 'img' => 'images/icons/computer.png'])->save();
         (new \App\Category())->fill(['name' => 'Офис и сеть', 'img' => 'images/icons/printer.png'])->save();
