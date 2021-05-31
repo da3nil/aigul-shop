@@ -31,15 +31,15 @@
                         @if (Request::route()->parameters()['category'] == $category->id)
                             <a class="btn btn-rose h-100 text-white p-2 d-flex align-items-center justify-content-start"
                                href="{{ route('categories.show', ['category' => $category->id]) }}" aria-selected="true">
-                                <img class=" rounded float-left h-50 pr-2" style="width:32px; height:32px;"
-                                     src="{{ asset('images/icons/phone.png') }}" alt="">
+                                <img class="rounded float-left h-50 pr-2" style="width:32px; height:32px;"
+                                     src="{{ asset($category->img) }}" alt="">
                                 {{ $category->name }}
                             </a>
                         @else
                             <a class="btn btn-primary h-100 text-white p-2 d-flex align-items-center justify-content-start"
                                href="{{ route('categories.show', ['category' => $category->id]) }}" aria-selected="true">
                                 <img class=" rounded float-left h-50 pr-2" style="width:32px; height:32px;"
-                                     src="{{ asset('images/icons/phone.png') }}" alt="">
+                                     src="{{ asset($category->img) }}" alt="">
                                 {{ $category->name }}
                             </a>
                         @endif
@@ -47,7 +47,7 @@
                         <a class="btn btn-primary h-100 text-white p-2 d-flex align-items-center justify-content-start"
                            href="{{ route('categories.show', ['category' => $category->id]) }}" aria-selected="true">
                             <img class=" rounded float-left h-50 pr-2" style="width:32px; height:32px;"
-                                 src="{{ asset('images/icons/phone.png') }}" alt="">
+                                 src="{{ asset($category->img) }}" alt="">
                             {{ $category->name }}
                         </a>
                     @endif
