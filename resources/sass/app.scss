@@ -35,3 +35,42 @@
 .oswald{
     font-family: 'Oswald', sans-serif;
 }
+
+.icon_phone:before {
+    width: 22px;
+    height: 32px;
+    margin: 1px 0 0 -40px;
+    background-position: -406px -65px;
+}
+
+.icon_point:before {
+    width: 24px;
+    height: 32px;
+    margin: 0 0 0 -41px;
+    background-position: -349px -65px;
+}
+
+.icon:before {
+    display: block;
+    float: left;
+    content: '';
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+}
+
+.contacts-block {
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Roboto-Black";
+    src: url("../fonts/Roboto-Black.ttf");
+}

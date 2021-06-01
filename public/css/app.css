@@ -11891,3 +11891,42 @@ a.text-dark:focus {
   font-family: "Oswald", sans-serif;
 }
 
+.icon_phone:before {
+  width: 22px;
+  height: 32px;
+  margin: 1px 0 0 -40px;
+  background-position: -406px -65px;
+}
+
+.icon_point:before {
+  width: 24px;
+  height: 32px;
+  margin: 0 0 0 -41px;
+  background-position: -349px -65px;
+}
+
+.icon:before {
+  display: block;
+  float: left;
+  content: "";
+  background-image: url(/images/sprite.png?3b38eb5271d815cb641839a257fa6080);
+  background-repeat: no-repeat;
+}
+
+.contacts-block {
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-Regular.ttf?f36638c2135b71e5a623dca52b611173);
+}
+
+@font-face {
+  font-family: "Roboto-Black";
+  src: url(/fonts/Roboto-Black.ttf?301fe70f8f0f41c236317504ec05f820);
+}
+
