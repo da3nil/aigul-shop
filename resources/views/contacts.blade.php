@@ -9,7 +9,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6 m-auto oswald">
+            <div class="col-md-7 m-auto oswald">
                 <h3 class="oswald text-center" style="font-size:2rem;">Контакты</h3>
                 <hr class="mb-5">
 
@@ -32,6 +32,19 @@
                             <div><b>г. Уфа, ул. Айская, 75</b></div>
                             <div><i>Розничный магазин</i></div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <h4 class="font-weight-bold">Расположение офисов продаж:</h4>
+                    <div style="position:relative;overflow:hidden;"><a
+                            href="https://yandex.ru/maps/172/ufa/?utm_medium=mapframe&utm_source=maps"
+                            style="color:#eee;font-size:12px;position:absolute;top:0px;">Уфа</a><a
+                            href="https://yandex.ru/maps/172/ufa/?from=api-maps&ll=55.970925%2C54.724040&mode=usermaps&origin=jsapi_2_1_78&um=constructor%3Ac728e676e4193b9ce454ba32234fe319126386654766eef929c78d70ccf4bc21&utm_medium=mapframe&utm_source=maps&z=14"
+                            style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс.Карты — транспорт,
+                            навигация, поиск мест</a>
+                        <iframe src="https://yandex.ru/map-widget/v1/-/CCUau8hV~C" width="560" height="400"
+                                frameborder="1" allowfullscreen="true" style="position:relative;border: none"></iframe>
                     </div>
                 </div>
 
